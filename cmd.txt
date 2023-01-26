@@ -1,0 +1,19 @@
+/pox.py log.level --INFO poxController_firewall
+
+python /home/akshita/SDN/mininet/mininetScript.py
+
+h2 hping3 -c 20 h4
+
+h1 hping3 -c 20 h4
+
+h3 iperf -s -p 80 &
+
+h3 iperf -s -p 22 &
+
+h1 iperf -c h3 -p 80 -t 2 -i 1
+
+h1 iperf -c h3 -p 22 -t 2 -i 1
+
+
+
+
