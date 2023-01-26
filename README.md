@@ -41,27 +41,37 @@ python mininetScript.py
   ```
   h2 ping h4
   ```
- * Output: The ARP L2-packets will be dropped by the Controller.
+  Output: The ARP L2-packets will be dropped by the Controller.
+  ```
+  h2 hping3 -c 20 h4
+  ```
+  Output: The TCP L2-packets will be dropped by the Controller.
+
 
 * Layer-3 Host-to-Host Connectivity blocked  
   ```
   h1 ping h4
   ```
- * Output: The IP Layer-packets will be dropped by the Controller.
+  Output: The IP Layer-packets will be dropped by the Controller.
+  ```
+  h1 hping3 -c 20 h4
+  ```
+  Output: The TCP L3-packets will be dropped by the Controller.
+ 
 
 * Layer-4 Destination Process blocked  
- * Run two IPerf servers on Host-h3  
+   Run two IPerf servers on Host-h3  
    ```
    h3 iperf -s -p 80 &
    
    h3 iperf -s -p 22 &
    ```
- * Connect to both the servers  
+   Connect to both the servers  
    ```
    h1 iperf –c h3 –p 80 –t 2 –i 1
    
    h1 iperf –c h3 –p 22 –t 2 –i 1
    ```
- * Output: All TCP-traffic to Destination h3 and port 80 are dropped by the Controller.
+   Output: All TCP-traffic to Destination h3 and port 80 are dropped by the Controller.
 
 
