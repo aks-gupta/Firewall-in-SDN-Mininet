@@ -78,9 +78,9 @@ class LearningSwitch (object):
 
     # Add a Couple of Rules Static entries
     # Two type of rules: (srcip,dstip) or (dstip,dstport)
-    #self.AddRule(dpid_to_str(connection.dpid), EthAddr('00:00:00:00:00:02'), 0, 0, 0)
+    self.AddRule(dpid_to_str(connection.dpid), EthAddr('00:00:00:00:00:02'), 0, 0, 0)
     self.AddRule(dpid_to_str(connection.dpid), 0, IPAddr('10.0.0.1'), IPAddr('10.0.0.4'),0)
-    #self.AddRule(dpid_to_str(connection.dpid), 0, 0, IPAddr('10.0.0.3'), 80)
+    self.AddRule(dpid_to_str(connection.dpid), 0, 0, IPAddr('10.0.0.3'), 80)
 
     # We want to hear PacketIn messages, so we listen
     # to the connection
