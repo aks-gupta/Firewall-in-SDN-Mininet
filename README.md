@@ -1,8 +1,10 @@
 # Firewall-in-SDN-Mininet
 
-Install mininet using sudo install mn
+Install mininet using 
+```sudo install mn```
 
-Install pox from their website
+Install pox from the website
+https://noxrepo.github.io/pox-doc/html/
 
 ## Installing
 There are two scripts namely, mininetScript.py and poxController_firewall.py which will run the mininet based ovsSwitch and POX Controller respectively.
